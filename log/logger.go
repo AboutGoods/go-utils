@@ -26,7 +26,6 @@ func ResetContext() {
 }
 
 // PanicOnError stops the program and logs it if the error passed as the first argument is not nil.
-
 func PanicOnError(err error, args ...interface{}) {
     if err != nil {
         data := append([]interface{}{err}, args...)
