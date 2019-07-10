@@ -1,3 +1,5 @@
+//Package debug for utilitaries functions
+//For dev only purpose
 package debug
 
 import (
