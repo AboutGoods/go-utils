@@ -29,8 +29,18 @@ func ResetContext() {
 func PanicOnError(err error, args ...interface{}) {
     if err != nil {
         data := append([]interface{}{err}, args...)
-        Fatal(data)
+        Fatal(data...)
     }
+}
+
+// NoticeOnError if an error occurs, logs it and return true, otherwise false.
+func NoticeOnError(err error, args ...interface{}) bool{
+    if err !=nil{
+        data := append([]interface{}{err}, args...)
+        Info(data...)
+        return true;
+    }
+    return false;
 }
 
 // Fatal is the global Contextualisation of logrus' eponym function
